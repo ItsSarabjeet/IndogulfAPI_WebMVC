@@ -1,0 +1,17 @@
+
+squid:UselessImportCheck"]Remove this unused import 'org.springframework.security.core.userdetails.UserDetailsService'.(¶…¥à8³óƒ­Ê-HÁRMINORZ
+CODE_SMELL
+’squid:S2293W"YReplace the type specification in this constructor call with the diamond operator ("<>").(ı’§üÿÿÿÿ8˜šã¸È-HÅRMINORZ
+CODE_SMELL
+—squid:UselessImportCheck"VRemove this unused import 'org.springframework.security.core.userdetails.UserDetails'.(ÊÁ¥8ËÉƒ­Ê-HÄRMINORZ
+CODE_SMELL
+—squid:S1192u"`Define a constant instead of duplicating this literal "response of API /user/username/" 3 times.(¨²ôÄ8ÜÀŠôÉ-HÂRCRITICALZ
+CODE_SMELL
+[squid:S1905I"'Remove this unnecessary cast to "List".(êÈØë8êÛ‚ôÉ-HÀRMINORZ
+CODE_SMELL
+’squid:S22934"YReplace the type specification in this constructor call with the diamond operator ("<>").(ı’§üÿÿÿÿ8êÛ‚ôÉ-H¾RMINORZ
+CODE_SMELL
+ªsquid:UselessImportCheck"dRemove this unused import 'org.springframework.security.core.userdetails.UsernameNotFoundException'.(Í£Ö¶ùÿÿÿÿ8ËÉƒ­Ê-HÃRMINORZ
+CODE_SMELL
+squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÑåıÿÿÿÿH¿RMINORZ
+CODE_SMELL

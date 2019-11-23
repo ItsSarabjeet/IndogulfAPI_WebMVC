@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="1" hostname="localhost" id="Oracle WebLogic Server 11gR1 (10.3.6) [base_domain]" name="Oracle WebLogic Server 11gR1 (10.3.6) [base_domain]" runtime-id="Oracle WebLogic Server 11gR1 (10.3.6)" server-type="weblogic.server" server-type-id="weblogic.server" start-timeout="480" start_with_debug="true" stop-timeout="240" timestamp="76" weblogic_domain_path="E:\Programs\ORACLE\Middleware\user_projects\domains\base_domain" weblogic_host_name="localhost" weblogic_is_remote="false" weblogic_port="7001" weblogic_use_bootprop="true" weblogic_use_config_xml="true">
+    <list key="modules" value0="IndogulfAPI::org.eclipse.jst.j2ee.server:IndogulfAPI::jst.web::2.3"/>
+  </server>
+</servers>

@@ -1,0 +1,116 @@
+package com.grasim.IndogulfAPI.oauth2;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.approval.ApprovalStore;
+import org.springframework.security.oauth2.provider.approval.TokenApprovalStore;
+import org.springframework.security.oauth2.provider.approval.TokenStoreUserApprovalHandler;
+import org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
+
+@SuppressWarnings("deprecation")
+@Configuration
+@EnableWebSecurity(debug = true)
+public class OAuth2SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+	@Autowired
+	private ClientDetailsService clientDetailsService;
+	
+    @Autowired
+    private DataSource dataSource;
+    
+
+    @Primary
+    @Bean
+    public DataSource customDataSource() {
+
+	    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+	    dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+	    dataSource.setUrl("jdbc:oracle:thin:@111.119.243.66:25111:indogulf");
+	    dataSource.setUsername("indogulf");
+	    dataSource.setPassword("IndogulfCeL0");
+	
+	    return dataSource;
+	
+	}
+    
+    //THIS IS STATIC USERS 
+	/*@Autowired
+    public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
+		
+        auth.inMemoryAuthentication()
+        .withUser("sarab").password("{noop}sarab123").roles("USER").and()
+        .withUser("rupesh").password("{noop}rupesh123").roles("USER");
+		
+    }*/
+    
+    //USERS FROM DATABASE
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception
+    {
+    	PasswordEncoder encoder = NoOpPasswordEncoder.getInstance();
+    	BCryptPasswordEncoder enc;
+    	
+        auth.jdbcAuthentication().dataSource(dataSource)
+    	.usersByUsernameQuery("select USERNAME, ENC_PASSWD as PASSWORD, 1 AS ENABLED FROM USER_MSTR WHERE USERNAME=?")
+    	.authoritiesByUsernameQuery("select USERNAME, 'CLIENT' as ROLE from USER_MSTR where USERNAME=?")
+    	.passwordEncoder(NoOpPasswordEncoder.getInstance())
+    	;
+        
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+		http
+		.csrf().disable()
+		.anonymous().disable()
+	  	.authorizeRequests()
+	  	.antMatchers("/oauth/token").permitAll();
+    }
+
+    @Override
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+
+	@Bean
+	public TokenStore tokenStore() {
+		return new InMemoryTokenStore();
+	}
+
+	@Bean
+	@Autowired
+	public TokenStoreUserApprovalHandler userApprovalHandler(TokenStore tokenStore){
+		TokenStoreUserApprovalHandler handler = new TokenStoreUserApprovalHandler();
+		handler.setTokenStore(tokenStore);
+		handler.setRequestFactory(new DefaultOAuth2RequestFactory(clientDetailsService));
+		handler.setClientDetailsService(clientDetailsService);
+		return handler;
+	}
+	
+	@Bean
+	@Autowired
+	public ApprovalStore approvalStore(TokenStore tokenStore) throws Exception {
+		TokenApprovalStore store = new TokenApprovalStore();
+		store.setTokenStore(tokenStore);
+		return store;
+	}
+	
+}

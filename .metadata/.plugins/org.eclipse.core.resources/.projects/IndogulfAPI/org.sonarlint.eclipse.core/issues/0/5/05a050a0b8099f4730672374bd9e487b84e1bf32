@@ -1,0 +1,9 @@
+
+psquid:UselessImportCheck	"6Remove this unused import 'javax.persistence.IdClass'.(†∫øìHéRMINORZ
+CODE_SMELL
+àsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(∂úıÉHèRMINORZ
+CODE_SMELL
+xsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(√á€ÜHêRMAJORZ
+CODE_SMELL
+wsquid:CommentedOutCodeLinej"<This block of commented-out lines of code should be removed.(âÉ˛HëRMAJORZ
+CODE_SMELL

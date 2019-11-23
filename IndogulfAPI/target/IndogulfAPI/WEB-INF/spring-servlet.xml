@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+        
+	<mvc:annotation-driven />
+ <tx:annotation-driven proxy-target-class="true"/>
+ <tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<context:component-scan
+		base-package="com.grasim.IndogulfAPI" />
+	
+<!-- 	<bean class="com.grasim.IndogulfAPI.util.PathLoader" id="pathLoader" name="pathLoader"></bean>
+ -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="locations" value="file:\C:\Users\SARABJEET\Desktop\application.properties"/>
+	    <!-- <property name="locations" value="file:\E:\IndogulfAPI\application.properties"/> -->
+	</bean>
+
+	<bean class="org.apache.commons.dbcp.BasicDataSource"
+		id="dataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		
+<!-- 		<property name="url" value="jdbc:oracle:thin:@111.119.243.66:25111:indogulf" />
+		<property name="username" value="indogulf" />
+		<property name="password" value="IndogulfCeL0" />
+ -->
+<!--
+ 		<property name="url" value="jdbc:oracle:thin:@10.129.1.23:1521:igfl" />
+		<property name="username" value="mobapp" />
+		<property name="password" value="mobapp" />
+ -->		
+	</bean>
+	
+	<bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
+		<property value="classpath:META-INF/foo.xml" name="persistenceXmlLocation" />
+		<property name="persistenceUnitName" value="persistenceUnit" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.enable_lazy_load_no_trans">true</prop>
+			</props>
+		</property>
+	</bean>
+  
+  	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    	<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven/> 
+
+</beans>

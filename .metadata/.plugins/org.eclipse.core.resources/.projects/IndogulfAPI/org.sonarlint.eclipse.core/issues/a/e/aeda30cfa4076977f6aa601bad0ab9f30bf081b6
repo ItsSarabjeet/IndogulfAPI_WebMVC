@@ -1,0 +1,35 @@
+
+squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÑåıÿÿÿÿH£RMINORZ
+CODE_SMELL
+Rsquid:S2153)" Remove the unboxing from "Long".(ÔãŒ¦üÿÿÿÿ8¦¦È¡Ê-H¤RMINORZBUG
+squid:S1192£"HDefine a constant instead of duplicating this literal "/revid/" 4 times.(Ã™ô/8”÷¹Ë-H¥RCRITICALZ
+CODE_SMELL
+„squid:CommentedOutCodeLine%"<This block of commented-out lines of code should be removed.(¿ŸÈ…øÿÿÿÿ8«ÂºÿÉ-H¦RMAJORZ
+CODE_SMELL
+squid:CommentedOutCodeLineN"<This block of commented-out lines of code should be removed.(¼›ı“8ÎëÄûÉ-H§RMAJORZ
+CODE_SMELL
+“squid:S2293…"YReplace the type specification in this constructor call with the diamond operator ("<>").(»÷¡¼úÿÿÿÿ8”÷¹Ë-H¨RMINORZ
+CODE_SMELL
+‰squid:UselessImportCheck"HRemove this unused import 'com.grasim.IndogulfAPI.model.PlantChecklist'.(ŠÈ÷Ï8–Å²ÿÉ-H©RMINORZ
+CODE_SMELL
+\squid:S1905±"'Remove this unnecessary cast to "List".(œè•´8»¡Ÿ¹Ë-HªRMINORZ
+CODE_SMELL
+“squid:S2293¯"YReplace the type specification in this constructor call with the diamond operator ("<>").(»÷¡¼úÿÿÿÿ8ŠÕÖëÊ-H«RMINORZ
+CODE_SMELL
+~squid:S1192£"GDefine a constant instead of duplicating this literal "?from=" 4 times.(Ã™ô/8”÷¹Ë-H¬RCRITICALZ
+CODE_SMELL
+~squid:S1192£"GDefine a constant instead of duplicating this literal "&size=" 4 times.(Ã™ô/8”÷¹Ë-H­RCRITICALZ
+CODE_SMELL
+\squid:S1905‡"'Remove this unnecessary cast to "List".(ÈË8ŠÕÖëÊ-H®RMINORZ
+CODE_SMELL
+“squid:S2293Æ"YReplace the type specification in this constructor call with the diamond operator ("<>").(ı’§üÿÿÿÿ8ŠÕÖëÊ-H¯RMINORZ
+CODE_SMELL
+“squid:S2293œ"YReplace the type specification in this constructor call with the diamond operator ("<>").(ı’§üÿÿÿÿ8”÷¹Ë-H°RMINORZ
+CODE_SMELL
+squid:CommentedOutCodeLinep"<This block of commented-out lines of code should be removed.(ŠäœĞ8ŠÕÖëÊ-H±RMAJORZ
+CODE_SMELL
+squid:S2293L"YReplace the type specification in this constructor call with the diamond operator ("<>").(Çæ±Ç8ÎëÄûÉ-H²RMINORZ
+CODE_SMELL
+Rsquid:S2153R" Remove the unboxing from "Long".(à×¹•øÿÿÿÿ8ğ¹Ë-H³RMINORZBUG
+šsquid:UselessImportCheck"TRemove this unused import 'com.grasim.IndogulfAPI.model.PlantChecklistParamTagLink'.(ßá˜úÿÿÿÿ8›ëÚÿÉ-H´RMINORZ
+CODE_SMELL

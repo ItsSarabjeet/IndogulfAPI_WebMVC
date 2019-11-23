@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-web-app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.1/weblogic-web-app.xsd">
+    <wls:weblogic-version>10.3.6</wls:weblogic-version>
+	<wls:context-root>IndogulfAPI</wls:context-root>
+	<wls:container-descriptor>
+		<wls:prefer-web-inf-classes>false</wls:prefer-web-inf-classes>
+		<wls:prefer-application-packages>
+			<wls:package-name>antlr.*</wls:package-name>
+			<wls:package-name>org.apache.commons.*</wls:package-name>
+			<wls:package-name>org.apache.xmlbeans.*</wls:package-name>
+			<wls:package-name>org.apache.xerces.*</wls:package-name>
+			<wls:package-name>org.springframework.*</wls:package-name>
+			
+			<wls:package-name>org.hibernate.*</wls:package-name>
+			<wls:package-name>org.hibernate.validator.*</wls:package-name>
+			<wls:package-name>org.hibernate.ejb.HibernatePersistence</wls:package-name>
+			
+			<wls:package-name>org.joda.*</wls:package-name>
+			<wls:package-name>org.aspectj.*</wls:package-name>
+			<wls:package-name>org.cglib.*</wls:package-name>
+			<wls:package-name>com.itextpdf.text.*</wls:package-name>
+			<wls:package-name>org.codehaus.jackson.map.*</wls:package-name>
+			<wls:package-name>org.codehaus.jackson.*</wls:package-name>
+			
+			<wls:package-name>javax.persistence.*</wls:package-name>
+		</wls:prefer-application-packages>
+
+	</wls:container-descriptor>
+
+	<wls:servlet-descriptor>
+		<wls:servlet-name>appServlet</wls:servlet-name>
+	</wls:servlet-descriptor>
+
+	<wls:url-match-map>
+	    weblogic.servlet.utils.SimpleApacheURLMatchMap
+	</wls:url-match-map>
+
+	<wls:jsp-descriptor>
+		<wls:page-check-seconds>2</wls:page-check-seconds>
+	</wls:jsp-descriptor>
+</wls:weblogic-web-app>

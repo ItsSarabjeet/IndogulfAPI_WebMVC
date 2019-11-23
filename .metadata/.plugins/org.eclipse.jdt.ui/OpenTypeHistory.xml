@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=IndogulfAPI/E:\/Programs\/Apache\/apache-maven-3.3.9\/repository\/org\/springframework\/security\/spring-security-core\/3.2.8.RELEASE\/spring-security-core-3.2.8.RELEASE.jar&lt;org.springframework.security.core.userdetails(UserDetails.class[UserDetails" modifiers="1537" timestamp="1565637400108"/>
+<typeInfo handle="=IndogulfAPI/E:\/Programs\/Apache\/apache-maven-3.3.9\/repository\/org\/springframework\/security\/spring-security-core\/3.2.8.RELEASE\/spring-security-core-3.2.8.RELEASE.jar&lt;org.springframework.security.core.userdetails(User.class[User" modifiers="33" timestamp="1565637400108"/>
+<typeInfo handle="=IndogulfAPI/E:\/Programs\/jdk1.7\/jre\/lib\/rt.jar&lt;sun.net.www.protocol.file(FileURLConnection.class[FileURLConnection" modifiers="33" timestamp="1564839204363"/>
+<typeInfo handle="=IndogulfAPI/E:\/Programs\/jdk1.7\/jre\/lib\/rt.jar&lt;java.io(FileInputStream.class[FileInputStream" modifiers="33" timestamp="1564839204363"/>
+<typeInfo handle="=IndogulfAPI/E:\/Programs\/Apache\/apache-maven-3.3.9\/repository\/org\/springframework\/spring-core\/4.3.1.RELEASE\/spring-core-4.3.1.RELEASE.jar&lt;org.springframework.core.io.support(EncodedResource.class[EncodedResource" modifiers="33" timestamp="1563093055510"/>
+<typeInfo handle="=IndogulfAPI/E:\/Programs\/Apache\/apache-maven-3.3.9\/repository\/org\/springframework\/spring-beans\/4.3.1.RELEASE\/spring-beans-4.3.1.RELEASE.jar&lt;org.springframework.beans.factory.config(BeanPostProcessor.class[BeanPostProcessor" modifiers="1537" timestamp="1563093059947"/>
+</typeInfoHistroy>
